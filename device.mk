@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2013 The Android Open Source Project
+# Copyright 2014 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,4 +14,19 @@
 # limitations under the License.
 #
 
-add_lunch_combo omni_cancro-userdebug
+# Sample: This is where we'd set a backup provider if we had one
+# $(call inherit-product, device/sample/products/backup_overlay.mk)
+
+# Get the long list of APNs
+
+$(call inherit-product, device/xiaomi/msm8974-common/cancro_common.mk)
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    audio.offload.pcm.enable=false
+
+PRODUCT_COPY_FILES += \
+    device/xiaomi/cancro/etc/bl_lut.txt:system/etc/bl_lut.txt \
+    device/xiaomi/cancro/etc/calib.cfg:system/etc/calib.cfg
+
+
+
