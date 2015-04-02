@@ -30,15 +30,17 @@ $(call inherit-product, vendor/omni/config/common.mk)
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/xiaomi/cancro/device.mk)
 # Discard inherited values and use our own instead.
+
 PRODUCT_NAME := omni_cancro
 PRODUCT_DEVICE := cancro
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Mi4LTE
-PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_BRAND := xiaomi
+PRODUCT_MODEL := mi4lte
+PRODUCT_MANUFACTURER := xiaomi
 
 
 # Inline kernel
 TARGET_KERNEL_SOURCE := kernel/xiaomi/cancro
 TARGET_KERNEL_CONFIG := omni_cancro_defconfig
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
 
 
