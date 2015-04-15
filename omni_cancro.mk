@@ -34,7 +34,7 @@ $(call inherit-product, device/xiaomi/cancro/device.mk)
 PRODUCT_NAME := omni_cancro
 PRODUCT_DEVICE := cancro
 PRODUCT_BRAND := xiaomi
-PRODUCT_MODEL := MI4 LTE
+PRODUCT_MODEL := MI 4LTE
 PRODUCT_MANUFACTURER := xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
