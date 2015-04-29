@@ -19,6 +19,10 @@
 
 # Get the long list of APNs
 
+PRODUCT_COPY_FILES += \
+    device/xiaomi/cancro/etc/bl_lut.txt:system/etc/bl_lut.txt \
+    device/xiaomi/cancro/etc/calib.cfg:system/etc/calib.cfg
+
 $(call inherit-product, device/xiaomi/msm8974-common/cancro.mk)
 
 
