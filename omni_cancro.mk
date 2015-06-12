@@ -48,5 +48,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=Xiaomi/cancro/cancro:5.0.2/LRX
 
 # Inline kernel
 TARGET_KERNEL_SOURCE := kernel/xiaomi/cancro
-TARGET_KERNEL_CONFIG := omni_cancro_defconfig
+TARGET_KERNEL_CONFIG := cancro_user_defconfig
 
