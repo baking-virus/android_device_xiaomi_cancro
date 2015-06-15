@@ -25,16 +25,10 @@
 },
 {
 "remote": "github",
-"repository": "rooque/android_device_xiaomi_msm8974-common",
-"target_path": "device/xiaomi/msm8974-common",
-"revision": "android-5.1"
-},
-{
-"remote": "github",
 "repository": "rooque/android_kernel_xiaomi_cancro",
 "target_path": "kernel/xiaomi/cancro",
 "revision": "android-5.1"
-}
+},
 {
     "remote": "omnirom",
     "repository": "android_frameworks_av",
