@@ -19,9 +19,42 @@
 
 # Get the long list of APNs
 
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.selinux=1
+
+# Check SOC
+PRODUCT_COPY_FILES += \
+    device/xiaomi/cancro/checksoc.sh:checksoc.sh
+
 PRODUCT_COPY_FILES += \
     device/xiaomi/cancro/etc/bl_lut.txt:system/etc/bl_lut.txt \
     device/xiaomi/cancro/etc/calib.cfg:system/etc/calib.cfg
+
+# NFC
+TARGET_USES_OS_NFC := true
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.nfc.port=I2C
+
+PRODUCT_PACKAGES += \
+    nfc_nci.bcm2079x.default \
+    NfcNci \
+    Tag
+
+ifeq ($(TARGET_BUILD_VARIANT),user)
+    NFCEE_ACCESS_PATH := $(LOCAL_PATH)/nfc/nfcee_access.xml
+else
+    NFCEE_ACCESS_PATH := $(LOCAL_PATH)/nfc/nfcee_access_debug.xml
+endif
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    device/xiaomi/cancro/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    device/xiaomi/cancro/nfc/libnfc-brcm-20791b05.conf:system/etc/libnfc-brcm-20791b05.conf \
+    device/xiaomi/cancro/nfc/firmware/bcm2079x-b5_firmware.ncd:system/vendor/firmware/bcm2079x-b5_firmware.ncd \
+    device/xiaomi/cancro/nfc/firmware/bcm2079x-b5_pre_firmware.ncd:system/vendor/firmware/bcm2079x-b5_pre_firmware.ncd \
+    $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
 $(call inherit-product, device/xiaomi/msm8974-common/cancro.mk)
 
