@@ -34,19 +34,26 @@ $(call inherit-product, device/xiaomi/cancro/device.mk)
 PRODUCT_NAME := omni_cancro
 PRODUCT_DEVICE := cancro
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := MI 4LTE
 PRODUCT_MANUFACTURER := Xiaomi
+#PRODUCT_MODEL := MI 4
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=cancro PRODUCT_NAME=cancro
+# Device prop
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_DEVICE="cancro" \
+    PRODUCT_NAME="cancro" 
+    
+# no DSPManager for us
+TARGET_NO_DSPMANAGER := true
 
-TARGET_CONTINUOUS_SPLASH_ENABLED := true
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_FINGERPRINT="xiaomi/cancro/cancro:6.0/MRA58N/5.11.1:user/release-keys" \
+    PRIVATE_BUILD_DESC="cancro-user 6.0 MRA58N 5.11.1 release-keys"
 
-## Use the latest approved GMS identifiers unless running a signed build
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=Xiaomi/cancro/cancro:5.0.2/LRX22G/5.2.13:userdebug/test-keys PRIVATE_BUILD_DESC="cancro-userdebug 5.0 LRX21M 4.12.8 test-keys"
+#TARGET_CONTINUOUS_SPLASH_ENABLED := true
 
 # Inline kernel
 TARGET_KERNEL_SOURCE := kernel/xiaomi/cancro
-TARGET_KERNEL_CONFIG := cancro_user_defconfig
+TARGET_KERNEL_CONFIG := omni_cancro_defconfig
 
