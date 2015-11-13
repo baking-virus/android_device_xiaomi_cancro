@@ -22,9 +22,9 @@
 # Get the prebuilt list of APNs
 $(call inherit-product, vendor/broken/config/gsm.mk)
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/broken/config/common_mini_phone.mk)
+$(call inherit-product, vendor/broken/config/common_full_phone.mk)
 # must be before including omni part
-TARGET_BOOTANIMATION_SIZE := 720x480
+TARGET_BOOTANIMATION_SIZE := 1920x1080
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/broken/config/common.mk)
 # Inherit from hardware-specific part of the product configuration
