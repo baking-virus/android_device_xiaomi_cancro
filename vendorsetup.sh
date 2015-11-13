@@ -14,5 +14,5 @@
 # limitations under the License.
 #
 
-add_lunch_combo omni_cancro-userdebug
+add_lunch_combo broken_cancro-userdebug
 add_lunch_combo omni_cancro-eng
