@@ -22,11 +22,11 @@
 # Get the prebuilt list of APNs
 #$(call inherit-product, vendor/eos/config/gsm.mk)
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/broken/config/common_mini_phone.mk)
+$(call inherit-product, vendor/eos/config/common_full_phone.mk)
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-# must be before including omni part
-TARGET_BOOTANIMATION_SIZE := 720x480
+# must be before including Eos part
+TARGET_BOOTANIMATION_SIZE := 1920x1080
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/eos/config/common.mk)
 # Inherit from hardware-specific part of the product configuration
